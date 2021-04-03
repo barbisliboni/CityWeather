@@ -18,11 +18,11 @@ So what was done here? A variable called woeid receives one of the values from t
 Important: to deal with JSON, a external library had to be used. Subsequently, after getting this item, we had to specify the name of the array and which item from it we wanted (with Casting), and following all this, we have the response we wanted.  
 
 ## Methods
-GET /weather/city/{location}
+**GET /weather/city/{location}**
 
 ### Arguments
 
-<b>location:</b> the name of the city you chose
+**location:** the name of the city you chose
 
 ### Examples
 
@@ -34,10 +34,20 @@ http://localhost:8080/weather/city/brasília
 
 
 ### Response Body
+
+200 - OK
 ```javascript
 {
   "celsius": float,
   "farenheit": float
+}
+```
+
+404 - Not Found
+
+```javascript
+{
+	"response": string
 }
 ```
 
@@ -52,4 +62,4 @@ Doing it, this code will open in an IDE on the browser. After this, run the code
 <br>
 <br>
 ### PS: Don't forget to use accent marks and space while writing it. 
-### PS²: It will show only the main cities/states if you're seaching a place which is not in the USA. 
+### PS²: It will show only the main cities/states if you're seaching a place which is not in the USA.
