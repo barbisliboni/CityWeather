@@ -47,7 +47,7 @@ http://localhost:8080/weather/city/brasília
 
 ```javascript
 {
-	"response": string
+  "response": string
 }
 ```
 
