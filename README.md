@@ -9,7 +9,8 @@ It starts with the controller, which has its endpoint called ("/weather/city/{lo
 ```
 
 and a request using GET, but here's the question: why get? Simple. Using GET, as we aren't passing any sensitive information, we can just write the params (in this case, the place we want to know the weather) in the request URL.
-After making a request, it passes the params through the MetaWeather API and gets the information that was specified (celsius and farenheit) to show on the screen as a Json Object. While making the response methods, as the array was a Json Array and Java is a strongly typed language, Casting had to be used to transform the Json Array item that we wanted in a Json Object, so then we could handle this specified information from the body of it. Important: to deal with Json, a external library had to be used. Subsequently, after getting this item, we had to specify the name of the array and which item from it we wanted (with Casting), and following all this, we have the response we wanted.  
+After making a request, it passes the params through the MetaWeather API and gets the information that was specified (celsius and farenheit) to show on the screen as a Json Object. <br>
+While making the response methods, as the array was a Json Array and Java is a strongly typed language, Casting had to be used to transform the Json Array item that we wanted in a Json Object, so then we could handle this specified information from the body of it. Important: to deal with Json, a external library had to be used. Subsequently, after getting this item, we had to specify the name of the array and which item from it we wanted (with Casting), and following all this, we have the response we wanted.  
 
 
 ## How to use it?
