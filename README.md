@@ -23,5 +23,5 @@ Doing it, this code will open in an IDE on the browser. After this, run the code
 http://localhost:8080/weather/city/{location}
 ```
 (By location, I mean the place you want to know the weather). 
-### PS: Don't forget to use accent and space while writing it. 
+### PS: Don't forget to use accent marks and space while writing it. 
 ### PS²: It will show only the main cities/states if you're seaching a place which is not in the USA. 
