@@ -3,13 +3,13 @@
 This repository refers to the application developed to retrieve the temperature in celsius and farenheit of a city/state/country you choose.
 
 ## How does it work (technically speaking)?
-It starts with the controller, which has its endpoint called ("/weather/city/{location}") and external service/model called in it. Inside the Request model, it has a request using GET, but here's the question: why get? Simple. Using GET, as we aren't passing any sensitive information, we can just write the params (in this case, the place we want to know the weather) in the request URL.
-After making a request, it passes the params through the MetaWeather API and gets the information that was specified (celsius and farenheit) to show on the screen as a Json Object. <br>
-While making the response methods, as the array was a JSON Array and Java is a strongly typed language, Casting had to be used to transform the Json Array item that we wanted in a Json Object, so then we could handle this specified information from the body of it. It will be like this: 
+It starts with the controller, which has its endpoint called ("/weather/city/{location}") and a external service/model called in it. Inside the Request model, it has a request using GET, but here's the question: why GET? Simple. Using GET, as we aren't passing any sensitive information, we can just write the params (in this case, the place we want to know the weather) in the request URL.
+After making a request, it passes the params through the MetaWeather API and gets the information that was specified (celsius and farenheit) to show on the screen as a JSON Object. <br>
+While making the response methods, as the array was a JSON Array and Java is a strongly typed language, Casting had to be used to transform the item of the JSON Array that we wanted in a JSON Object, so then we could handle this specified information from it. It will be like this: 
 ```
 String woeid = ((JSONObject) new JSONArray(responseWOEID.body()).get(0)).get("woeid").toString();
 ```
-So what was done here? A variable called woeid receives one of the values from the JSONArray, getting the "woeid" by acessing its key on the JSONObject and transforming it into a String. <br>
+So what was done here? A variable called woeid (that means Where On Earth IDentifier) which stores this information from the external API, receives one of the values from the JSON Array, getting the "woeid" by acessing its key on the JSON Object and transforming it into a String. <br>
 Important: to deal with JSON, a external library had to be used. Subsequently, after getting this item, we had to specify the name of the array and which item from it we wanted (with Casting), and following all this, we have the response we wanted.  
 
 ## Methods
