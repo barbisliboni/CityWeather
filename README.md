@@ -3,12 +3,7 @@
 This repository refers to the application developed to retrieve the temperature in celsius and farenheit of a city/state/country you choose.
 
 ## How does it work (technically speaking)?
-It starts with the controller, which has its endpoint called ("/weather/city/{location}"), for instance:
-```
-/weather/city/london
-```
-
-and external service/model called in it. Inside the Request model, it has a request using GET, but here's the question: why get? Simple. Using GET, as we aren't passing any sensitive information, we can just write the params (in this case, the place we want to know the weather) in the request URL.
+It starts with the controller, which has its endpoint called ("/weather/city/{location}") and external service/model called in it. Inside the Request model, it has a request using GET, but here's the question: why get? Simple. Using GET, as we aren't passing any sensitive information, we can just write the params (in this case, the place we want to know the weather) in the request URL.
 After making a request, it passes the params through the MetaWeather API and gets the information that was specified (celsius and farenheit) to show on the screen as a Json Object. <br>
 While making the response methods, as the array was a JSON Array and Java is a strongly typed language, Casting had to be used to transform the Json Array item that we wanted in a Json Object, so then we could handle this specified information from the body of it. It will be like this: 
 ```
