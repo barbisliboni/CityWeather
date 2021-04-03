@@ -1,10 +1,10 @@
 # cityWeather
 
-This repository refers to the application developed to retrieve the temperature in celsius and farenheit of a city/state/country you choose.
+This repository refers to the application developed to retrieve the temperature in celsius and fahrenheit of a city/state/country you choose.
 
 ## How does it work (technically speaking)?
 It starts with the controller, which has its endpoint called ("/weather/city/{location}") and a external service/model called in it. Inside the Request model, it has a request using GET, but here's the question: why GET? Simple. Using GET, as we aren't passing any sensitive information, we can just write the params (in this case, the place we want to know the weather) in the request URL.
-After making a request, it passes the params through the MetaWeather API and gets the information that was specified (celsius and farenheit) to show on the screen as a JSON Object. <br>
+After making a request, it passes the params through the MetaWeather API and gets the information that was specified (celsius and fahrenheit) to show on the screen as a JSON Object. <br>
 While making the response methods, as the array was a JSON Array and Java is a strongly typed language, Casting had to be used to transform the item of the JSON Array that we wanted in a JSON Object, so then we could handle this specified information from it. It will be like this: 
 ```
 String woeid = ((JSONObject) new JSONArray(responseWOEID.body()).get(0)).get("woeid").toString();
@@ -34,7 +34,7 @@ http://localhost:8080/weather/city/brasília
 ```javascript
 {
   "celsius": float,
-  "farenheit": float
+  "fahrenheit": float
 }
 ```
 
