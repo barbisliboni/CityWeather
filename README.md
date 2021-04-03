@@ -17,7 +17,7 @@ First, in the URL of this repository of mine, after "github", write "1s", like t
 ```
 https://github1s.com/barbisliboni/cityWeather
 ``` 
-Doing it, this code will open in your IDE. After this, run the code, check the terminal to know if its already running, and write the following URL in wherever you want to test it (Postman, browser, Fiddler, etc): 
+Doing it, this code will open in an IDE on the browser. After this, run the code, check the terminal to know if its already running, and write the following URL in wherever you want to test it (Postman, browser, Fiddler, etc): 
 ```
 http://localhost:8080/weather/city/{location}
 ```
