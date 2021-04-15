@@ -58,3 +58,9 @@ Doing it, this code will open in an IDE on the browser. After this, run the code
 <br>
 ### PS: Don't forget to use accent marks and space while writing it. 
 ### PS²: It will show only the main cities/states if you're seaching a place which is not in the USA.
+<br>
+<p align="center">
+    All rights deserved to Bárbara Liboni Guerra
+</p>
+
+
