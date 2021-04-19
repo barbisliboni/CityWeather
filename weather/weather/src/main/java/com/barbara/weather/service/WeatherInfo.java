@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.barbara.weather.model.Request;
@@ -21,12 +22,12 @@ public class WeatherInfo {
 		requestWOEID.setUrl("https://www.metaweather.com/api/location/search/?query="+city);
 		HttpResponse<String> responseWOEID = requestWOEID.GET();
 		
-		String woeid = ((JSONObject) new JSONArray(responseWOEID.body()).get(0)).get("woeid").toString();
+		String woeid = null;
 		
 		return woeid;
 	}
 	
-	public static JSONObject requestWeather(String city, String woeid) throws IOException, InterruptedException, URISyntaxException {
+	public static JSONObject requestWeather(String city, String woeid) throws IOException, InterruptedException, URISyntaxException, JSONException {
 		
 		Request requestWeather = new Request();
 		requestWeather.setUrl("https://www.metaweather.com/api/location/"+woeid+"/");
