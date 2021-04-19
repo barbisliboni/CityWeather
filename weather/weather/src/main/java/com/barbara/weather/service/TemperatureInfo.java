@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URISyntaxException;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.barbara.weather.model.Response;
 
 public class TemperatureInfo {
 	
-	public static Response getTemperature(String city) throws IOException, InterruptedException, URISyntaxException {
+	public static Response getTemperature(String city) throws IOException, InterruptedException, URISyntaxException, JSONException {
 		String woeid = WeatherInfo.requestWOEID(city);
 		JSONObject consolidatedWeather = WeatherInfo.requestWeather(city, woeid);
 		

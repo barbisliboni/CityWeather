@@ -29,7 +29,7 @@ public class MainController {
 			return ResponseEntity.ok(response);
 			
 		} catch (URISyntaxException notFound) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404 - Error during city request. Typo or the city doesn't exist.");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404 - Error during city request. Typo or the city \""+city+"\" doesn't exist.");
 			
 		} catch(InterruptedException internalServerError ) {
 			 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("500 - Internal Server Error. Please try reloading this web page.");
@@ -38,7 +38,7 @@ public class MainController {
 			 return ResponseEntity.status(HttpStatus.NON_AUTHORITATIVE_INFORMATION).body("Lots of requests in our server. Try again later.");
 			
 		} catch(JSONException e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404 - Error during city request. Typo or the city doesn't exist.");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404 - Error during city request. Typo or the city \""+city+"\" doesn't exist.");
 		}
 	}
 }

@@ -22,7 +22,7 @@ public class WeatherInfo {
 		requestWOEID.setUrl("https://www.metaweather.com/api/location/search/?query="+city);
 		HttpResponse<String> responseWOEID = requestWOEID.GET();
 		
-		String woeid = null;
+		String woeid = ((JSONObject) new JSONArray(responseWOEID.body()).get(0)).get("woeid").toString();;
 		
 		return woeid;
 	}
